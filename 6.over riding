@@ -1,0 +1,34 @@
+class Calculator {
+    public double add(double num1, double num2) {
+        return num1 + num2;
+    }
+
+    public double subtract(double num1, double num2) {
+        return num1 - num2;
+    }
+
+    public double multiply(double num1, double num2) {
+        return num1 * num2;
+    }
+
+    public double divide(double num1, double num2) {
+        return num2 != 0 ? num1 / num2 : Double.NaN; 
+    }
+}
+
+class ScientificCalculator extends Calculator {
+    @Override
+    public double multiply(double num1, double num2) {
+        return Math.pow(super.multiply(num1, num2), 2); 
+    }
+}
+
+public class R192211222 {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        ScientificCalculator scientificCalculator = new ScientificCalculator();
+
+        System.out.println("Calculator Multiply: " + calculator.multiply(5, 3));
+        System.out.println("Scientific Calculator Multiply (complex): " + scientificCalculator.multiply(5, 3));
+    }
+}
