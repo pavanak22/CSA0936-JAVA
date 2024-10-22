@@ -1,0 +1,27 @@
+public class R192211222 {
+    public int sum(int... numbers) {
+        int total = 0;
+        for (int num : numbers) {
+            total += num;
+        }
+        return total;
+    }
+
+    public double sum(double... numbers) {
+        double total = 0.0;
+        for (double num : numbers) {
+            total += num;
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        R192211222 calculator = new R192211222();
+
+        int intSum = calculator.sum(1, 2, 3, 4, 5);
+        double doubleSum = calculator.sum(1.5, 2.5, 3.0);
+
+        System.out.println("Sum of integers: " + intSum);
+        System.out.println("Sum of doubles: " + doubleSum);
+    }
+}
