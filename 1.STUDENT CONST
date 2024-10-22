@@ -1,0 +1,47 @@
+import java.util.List;
+class R192211222 {
+    private String name;
+    private String id;
+    private List<Double> grades;
+    public R192211222(String name, String id, List<Double> grades) {
+        this.name = name;
+        this.id = id;
+        this.grades = grades;
+    }
+    public double calculateAverage() {
+        double sum = 0;
+        for (double grade : grades) {
+            sum += grade;
+        }
+        return sum / grades.size();
+    }
+    public String getLetterGrade() {
+        double average = calculateAverage();
+        
+        if (average >= 90) {
+            return "A";
+        } else if (average >= 80) {
+            return "B";
+        } else if (average >= 70) {
+            return "C";
+        } else if (average >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
+    public String getName() {
+        return name;
+    }
+    public String getId() {
+        return id;
+    }
+    public static void main(String[] args) {
+        List<Double> grades = List.of(85.5, 90.0, 78.0, 92.0, 88.5);
+        R192211222 student = new R192211222("John Doe", "S12345", grades);
+        System.out.println("Student Name: " + student.getName());
+        System.out.println("Student ID: " + student.getId());
+        System.out.println("Average Grade: " + student.calculateAverage());
+        System.out.println("Letter Grade: " + student.getLetterGrade());
+    }
+}
