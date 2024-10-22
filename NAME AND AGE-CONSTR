@@ -1,0 +1,16 @@
+class R192211222 {
+    private String name;
+    private int age;
+    public R192211222(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public void printPersonDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+    public static void main(String[] args) {
+        R192211222 person = new R192211222("Alice", 30);
+        person.printPersonDetails();
+    }
+}
