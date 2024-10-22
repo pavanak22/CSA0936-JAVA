@@ -1,0 +1,43 @@
+class R192211222 {
+    private String accountNumber;
+    private double balance;
+    public R192211222(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew: $" + amount);
+        } else if (amount > balance) {
+            System.out.println("Insufficient funds.");
+        } else {
+            System.out.println("Withdrawal amount must be positive.");
+        }
+    }
+    public double getBalance() {
+        return balance;
+    }
+    public static void main(String[] args) {
+        R192211222 account = new R192211222 ("123456789", 500.0);
+
+        System.out.println("Initial Balance: $" + account.getBalance());
+        
+        account.deposit(200.0);
+        System.out.println("Current Balance: $" + account.getBalance());
+        
+        account.withdraw(100.0);
+        System.out.println("Current Balance: $" + account.getBalance());
+        
+        account.withdraw(700.0);  
+        System.out.println("Current Balance: $" + account.getBalance());
+    }
+}
