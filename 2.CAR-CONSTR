@@ -1,0 +1,19 @@
+class R192211222 {
+    private String make;
+    private String model;
+    private int year;
+    public R192211222(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+    public void printCarDetails() {
+        System.out.println("Car Make: " + make);
+        System.out.println("Car Model: " + model);
+        System.out.println("Car Year: " + year);
+    }
+    public static void main(String[] args) {
+        R192211222 car = new R192211222("Toyota", "Camry", 2020);
+        car.printCarDetails();
+    }
+}
